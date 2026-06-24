@@ -1,3 +1,175 @@
+# NYC Taxi GCP Airflow BigQuery ELT Pipeline
+
+A production-style data engineering project that demonstrates the evolution of a local analytics pipeline into a cloud-based ELT pipeline using **Apache Airflow**, **Google Cloud Storage**, and **Google BigQuery**.
+
+This project is designed to show practical Data Engineering skills, including pipeline orchestration, cloud data lake ingestion, BigQuery data warehouse modeling, SQL-based ELT transformation, data quality checks, and dashboard-ready analytics marts.
+
+---
+
+## Project Evolution
+
+| Version | Pipeline Type            | Main Tools                    | Status      |
+| ------- | ------------------------ | ----------------------------- | ----------- |
+| V1      | Local Analytics Pipeline | Python, DuckDB, SQL, Power BI | Completed   |
+| V2      | Cloud ELT Pipeline       | Airflow, GCS, BigQuery, SQL   | In Progress |
+
+---
+
+## V1: Local Analytics Pipeline
+
+The first version of this project focuses on building a local-first analytics pipeline without cloud billing.
+
+### V1 Workflow
+
+```text
+NYC Taxi Parquet Files
+        ↓
+Python Validation
+        ↓
+DuckDB Local Warehouse
+        ↓
+SQL Analytics Marts
+        ↓
+Power BI Dashboard-ready Outputs
+```
+
+### V1 Key Features
+
+* Local data ingestion using Python
+* Data validation before loading
+* DuckDB local analytical database
+* SQL-based transformation
+* Dashboard-ready mart tables
+* Power BI-ready exports
+* Basic data quality checks
+
+---
+
+## V2: GCP Airflow BigQuery ELT Pipeline
+
+The second version upgrades the local pipeline into a cloud-based ELT pipeline using Google Cloud Platform.
+
+### V2 Target Architecture
+
+```text
+NYC Taxi Parquet Files
+        ↓
+Apache Airflow DAG
+        ↓
+Google Cloud Storage
+        ↓
+BigQuery Raw Tables
+        ↓
+BigQuery Staging Tables
+        ↓
+BigQuery Warehouse Tables
+        ↓
+BigQuery Mart Tables
+        ↓
+Data Quality Checks
+        ↓
+Dashboard-ready Analytics
+```
+
+### V2 Planned Features
+
+* Apache Airflow orchestration
+* Google Cloud Storage raw data zone
+* BigQuery raw, staging, warehouse, and mart layers
+* SQL-based ELT transformation
+* Incremental loading by month
+* BigQuery partitioning and clustering
+* Automated data quality checks
+* Pipeline audit logs
+* Dashboard-ready mart tables
+* Documentation for setup, data model, and architecture
+
+---
+
+## Tech Stack
+
+| Category        | Tools                       |
+| --------------- | --------------------------- |
+| Language        | Python, SQL                 |
+| Orchestration   | Apache Airflow              |
+| Cloud Storage   | Google Cloud Storage        |
+| Data Warehouse  | Google BigQuery             |
+| Local Analytics | DuckDB                      |
+| BI / Dashboard  | Power BI / Looker Studio    |
+| Version Control | Git, GitHub                 |
+| Environment     | Docker, Virtual Environment |
+
+---
+
+## Repository Structure
+
+```text
+.
+├── dags/                         # Airflow DAG files
+├── data/                         # Local data folders
+│   ├── raw/
+│   ├── processed/
+│   └── rejected/
+├── docs/
+│   └── gcp/                      # GCP, Airflow, and BigQuery documentation
+├── sql/
+│   ├── duckdb/                   # V1 local SQL models
+│   └── bigquery/                 # V2 BigQuery SQL models
+│       ├── raw/
+│       ├── staging/
+│       ├── warehouse/
+│       ├── marts/
+│       └── data_quality/
+├── src/
+│   └── gcp/                      # Python scripts for GCP pipeline
+├── dashboards/
+│   └── screenshots/              # Dashboard and pipeline screenshots
+├── requirements.txt
+├── .env.example
+├── .gitignore
+└── README.md
+```
+
+---
+
+## Learning Objectives
+
+This project is part of my Data Engineering learning path. The main objective is to strengthen practical skills in:
+
+* Building end-to-end data pipelines
+* Designing local and cloud-based data workflows
+* Using Airflow for orchestration
+* Loading data into Google Cloud Storage and BigQuery
+* Creating analytical data models with SQL
+* Applying data quality checks
+* Preparing analytics marts for dashboards
+* Documenting data engineering projects professionally
+
+---
+
+## Current Development Status
+
+| Step     | Task                                                     | Status      |
+| -------- | -------------------------------------------------------- | ----------- |
+| Step 0   | Create Git branch for GCP version                        | Completed   |
+| Step 1   | Add GCP / Airflow / BigQuery folder structure            | Completed   |
+| Step 1.5 | Update `.gitignore` for local, database, and cloud files | Completed   |
+| Step 2   | Update README for V1 / V2 project positioning            | In Progress |
+| Step 3   | Add Airflow local setup                                  | Not Started |
+| Step 4   | Create first Airflow DAG                                 | Not Started |
+| Step 5   | Add GCS upload script                                    | Not Started |
+| Step 6   | Load data from GCS to BigQuery                           | Not Started |
+| Step 7   | Build BigQuery staging and mart tables                   | Not Started |
+| Step 8   | Add data quality checks                                  | Not Started |
+
+---
+
+## Portfolio Value
+
+This project demonstrates the ability to upgrade a local analytics workflow into a cloud-based data engineering pipeline. It highlights practical skills that are commonly required in Data Engineer roles, including orchestration, cloud storage, data warehousing, SQL transformation, data quality, and documentation.
+
+The project is built step by step to show not only the final result, but also the learning process and engineering decisions behind the pipeline.
+
 # NYC Taxi Local Analytics Pipeline
 
 Portfolio project สำหรับสร้าง data pipeline แบบไม่ใช้ Cloud จาก NYC Yellow Taxi monthly Parquet files ไปสู่ local validated data lake, DuckDB SQL marts และ Power BI Desktop dashboard
