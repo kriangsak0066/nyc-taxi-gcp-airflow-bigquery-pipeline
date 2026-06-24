@@ -1,0 +1,86 @@
+﻿# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# =========================
+# Virtual Environment
+# =========================
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+ENV/
+.conda/
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Data files
+# Keep folder structure only
+# =========================
+data/raw/**
+!data/raw/
+!data/raw/.gitkeep
+
+data/processed/**
+!data/processed/
+!data/processed/.gitkeep
+
+data/rejected/**
+!data/rejected/
+!data/rejected/.gitkeep
+
+# =========================
+# Generated reports / logs / exports
+# =========================
+reports/**
+!reports/
+!reports/.gitkeep
+
+logs/**
+!logs/
+!logs/.gitkeep
+
+exports/**
+!exports/
+!exports/.gitkeep
+
+tmp/
+
+# =========================
+# Local database files
+# =========================
+*.duckdb
+*.duckdb.wal
+*.db
+*.sqlite
+*.sqlite3
+
+# =========================
+# Credentials / Secrets
+# =========================
+credentials/
+secrets/
+*credentials*.json
+*service-account*.json
+*gcp-key*.json
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
