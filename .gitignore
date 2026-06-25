@@ -43,6 +43,10 @@ data/rejected/**
 !data/rejected/
 !data/rejected/.gitkeep
 
+data/warehouse/**
+!data/warehouse/
+!data/warehouse/.gitkeep
+
 # =========================
 # Generated reports / logs / exports
 # =========================
