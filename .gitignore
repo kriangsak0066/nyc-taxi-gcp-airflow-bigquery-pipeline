@@ -80,6 +80,12 @@ secrets/
 *gcp-key*.json
 
 # =========================
+# Airflow generated config
+# =========================
+config/*
+!config/.gitkeep
+
+# =========================
 # Airflow local files
 # =========================
 airflow/logs/
