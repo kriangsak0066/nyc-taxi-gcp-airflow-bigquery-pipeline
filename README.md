@@ -167,8 +167,8 @@ Default local development credentials are documented in the sample config files 
 ### 1. Clone the repository
 
 ```powershell
-git clone https://github.com/kriangsak0066/nyc-taxi-gcp-airflow-bigquery-pipeline.git
-cd nyc-taxi-gcp-airflow-bigquery-pipeline
+git clone https://github.com/kriangsak0066/nyc-taxi-airflow-minio-duckdb-pipeline.git
+cd nyc-taxi-airflow-minio-duckdb-pipeline
 ```
 
 ### 2. Start Airflow and MinIO
