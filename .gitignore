@@ -61,6 +61,8 @@ logs/**
 exports/**
 !exports/
 !exports/.gitkeep
+!exports/marts/
+!exports/marts/.gitkeep
 
 tmp/
 *.log
