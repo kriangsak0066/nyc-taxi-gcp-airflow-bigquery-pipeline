@@ -162,6 +162,103 @@ CSV files are generated outputs and are excluded from Git tracking.
 Default local development credentials are documented in the sample config files under `config/`.
 
 ---
+## Quick Start
+
+### 1. Clone the repository
+
+```powershell
+git clone https://github.com/kriangsak0066/nyc-taxi-gcp-airflow-bigquery-pipeline.git
+cd nyc-taxi-gcp-airflow-bigquery-pipeline
+```
+
+### 2. Start Airflow and MinIO
+
+```powershell
+docker compose -f docker-compose.airflow.yml up -d
+```
+
+Check running containers:
+
+```powershell
+docker ps
+```
+
+Expected local services:
+
+| Service       | URL                     |
+| ------------- | ----------------------- |
+| Airflow UI    | `http://localhost:8080` |
+| MinIO Console | `http://localhost:9001` |
+
+### 3. Prepare raw data
+
+Place NYC Taxi parquet files in:
+
+```text
+data/raw/
+```
+
+Expected file pattern:
+
+```text
+yellow_tripdata_*.parquet
+```
+
+Example:
+
+```text
+data/raw/yellow_tripdata_2026-01.parquet
+data/raw/yellow_tripdata_2026-02.parquet
+data/raw/yellow_tripdata_2026-03.parquet
+```
+
+### 4. Run Airflow DAGs in order
+
+Trigger the DAGs in this order from the Airflow UI:
+
+| Order | DAG                             | Purpose                              |
+| ----- | ------------------------------- | ------------------------------------ |
+| 1     | `check_nyc_taxi_raw_files`      | Validate raw parquet files           |
+| 2     | `upload_nyc_taxi_to_minio`      | Upload raw files to MinIO            |
+| 3     | `build_duckdb_marts_from_minio` | Build DuckDB staging and mart tables |
+| 4     | `export_duckdb_marts_to_csv`    | Export mart tables to CSV            |
+
+### 5. Check DuckDB tables
+
+```powershell
+docker compose -f docker-compose.airflow.yml exec airflow-worker python -c "import duckdb; con=duckdb.connect('/opt/airflow/data/warehouse/nyc_taxi_minio.duckdb'); print(con.execute('SHOW TABLES').fetchall()); con.close()"
+```
+
+Expected tables:
+
+```text
+stg_taxi_trips
+mart_daily_kpis
+mart_hourly_demand
+mart_payment_mix
+mart_data_quality_summary
+```
+
+### 6. Check CSV exports
+
+```powershell
+dir exports\marts
+```
+
+Expected outputs:
+
+```text
+mart_daily_kpis.csv
+mart_hourly_demand.csv
+mart_payment_mix.csv
+mart_data_quality_summary.csv
+```
+
+### 7. Stop local services
+
+```powershell
+docker compose -f docker-compose.airflow.yml down
+```
 
 ## Portfolio Value
 
@@ -185,7 +282,6 @@ The project shows not only the final pipeline output, but also the engineering d
 
 Planned future improvements:
 
-* Add dashboard screenshots to the README
 * Add a Mermaid architecture diagram
 * Add data dictionary documentation
 * Add automated data quality checks as a separate DAG
