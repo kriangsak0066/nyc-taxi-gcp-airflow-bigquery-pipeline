@@ -5,7 +5,7 @@
 ## Step 0: เข้าโฟลเดอร์โปรเจกต์
 
 ```powershell
-cd C:\data-engineering-portfolio\Project_nyc-taxi-gcp-data-pipeline\nyc-taxi-gcp-data-pipeline
+cd C:\data-engineering-portfolio\nyc-taxi-airflow-minio-duckdb-pipeline
 ```
 
 ## Step 1: เข้าใจข้อมูล raw

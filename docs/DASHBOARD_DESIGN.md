@@ -26,11 +26,11 @@ mart_data_quality_summary
 
 ## Dashboard Screenshots
 
-- [Page 1: Executive Overview](images/dashboard-01-executive-overview.png)
-- [Page 2: Demand Patterns](images/dashboard-02-demand-patterns.png)
-- [Page 3: Revenue and Fare](images/dashboard-03-revenue-and-fare.png)
-- [Page 4: Zone / Route Performance](images/dashboard-04-zone-route-performance.png)
-- [Page 5: Data Quality](images/dashboard-05-data-quality.png)
+- [Page 1: Executive Overview](../dashboards/images/dashboard-01-executive-overview.png)
+- [Page 2: Demand Patterns](../dashboards/images/dashboard-02-demand-patterns.png)
+- [Page 3: Revenue and Fare](../dashboards/images/dashboard-03-revenue-and-fare.png)
+- [Page 4: Zone / Route Performance](../dashboards/images/dashboard-04-zone-route-performance.png)
+- [Page 5: Data Quality](../dashboards/images/dashboard-05-data-quality.png)
 
 ## Page 1: Executive Overview
 
